@@ -47,7 +47,6 @@ def languages(request: HttpRequest):
 
 
 def language_info(request: HttpRequest, language: str):
-    # students = Student.objects.filter(courses__name="Algebra")
     countries = Country.objects.filter(languages__language=language)
     return render(request, 'countries/language_info.html', {
         'title': language,
